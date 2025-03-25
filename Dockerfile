@@ -7,4 +7,4 @@ ENV N8N_API_DISABLED=false
 ENV N8N_PORT=5678
 ENV N8N_HOST=0.0.0.0
 USER node
-CMD ["/bin/sh", "-c", "echo \"API Key is: $N8N_API_KEY\" && n8n start"]
+CMD ["/bin/sh", "-c", "env && n8n start"]
