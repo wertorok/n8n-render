@@ -11,5 +11,8 @@
     "host": "n8n-render-production-c2d4.up.railway.app",
     "protocol": "https",
     "webhookUrl": "https://n8n-render-production-c2d4.up.railway.app/",
-    "encryptionKey": "твой_ключ"
+    "encryptionKey": "твой_ключ",
+    "runners": {
+      "enabled": true
+    }
   }
