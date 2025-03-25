@@ -1,6 +1,13 @@
-FROM n8nio/n8n:latest
+FROM node:18-alpine
 
-# Установка переменных окружения
+# Установка n8n глобально
+RUN npm install -g n8n
+
+# Установка рабочей директории
+WORKDIR /home/node
+RUN mkdir -p /home/node/.n8n && chown node:node /home/node/.n8n
+
+# Переменные окружения
 ARG N8N_API_KEY
 ARG N8N_HOST
 ARG N8N_ENCRYPTION_KEY
@@ -13,7 +20,8 @@ ENV N8N_PROTOCOL=https
 ENV WEBHOOK_URL=https://${N8N_HOST}/
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
-# Проверка наличия n8n
-RUN echo "Checking n8n location:" && which n8n || echo "n8n not found in PATH" && ls -la /usr/local/bin/
+# Переключение на пользователя node
+USER node
 
-CMD ["/usr/local/bin/n8n", "start"]
+# Запуск n8n
+CMD ["n8n", "start"]
