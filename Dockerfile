@@ -13,5 +13,5 @@ COPY config.json /home/node/.n8n/config
 # Переключение на пользователя node
 USER node
 
-# Запуск n8n
-CMD ["n8n", "start"]
+# Запуск n8n с отладкой
+CMD ["/bin/sh", "-c", "cat /home/node/.n8n/config && n8n start"]
