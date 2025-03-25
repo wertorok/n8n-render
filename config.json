@@ -1,9 +1,8 @@
 {
+    "auth": {
+      "apiKey": "mysecretkey2025"
+    },
     "security": {
-      "api": {
-        "enabled": true,
-        "key": "mysecretkey2025"
-      },
       "basicAuth": {
         "active": false
       }
