@@ -20,7 +20,7 @@ ENV N8N_AUTH_EXCLUDE_ENDPOINTS=""
 ENV N8N_PROTOCOL=https
 ENV WEBHOOK_URL=https://${N8N_HOST}/
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-ENV N8N_API_AUTH_ENABLED=true  # Явно включаем API-авторизацию
+ENV N8N_API_AUTH_ENABLED=true
 
 # Переключение на пользователя node
 USER node
