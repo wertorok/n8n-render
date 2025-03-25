@@ -23,5 +23,5 @@ ENV N8N_RUNNERS_ENABLED=true
 # Переключение на пользователя node
 USER node
 
-# Запуск n8n с отладкой через printenv
-CMD ["/bin/sh", "-c", "printenv | grep N8N_API_KEY && n8n start"]
+# Запуск n8n с отладкой
+CMD ["/bin/sh", "-c", "echo 'API Key: $N8N_API_KEY' && echo 'API Auth Enabled: $N8N_API_AUTH_ENABLED' && n8n start"]
