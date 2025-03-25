@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
-# Установка n8n глобально
-RUN npm install -g n8n@1.84.1
+# Установка n8n и n8n-nodes-mcp
+RUN npm install -g n8n@1.84.1 n8n-nodes-mcp
 
 # Установка рабочей директории
 WORKDIR /home/node
