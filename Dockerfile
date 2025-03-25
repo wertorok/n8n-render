@@ -1,7 +1,11 @@
 FROM n8nio/n8n:latest
 
-# Убедись, что n8n доступен
+# Переключаемся на root для установки
+USER root
 RUN npm install -g n8n
+
+# Возвращаемся к пользователю node для безопасности
+USER node
 
 # Переменные окружения
 ENV N8N_API_KEY=mysecretkey2025
