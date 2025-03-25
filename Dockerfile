@@ -10,8 +10,11 @@ RUN mkdir -p /home/node/.n8n && chown node:node /home/node/.n8n
 # Копируем конфигурацию
 COPY config.json /home/node/.n8n/config
 
+# Устанавливаем права на файл
+RUN chmod 600 /home/node/.n8n/config
+
 # Переключение на пользователя node
 USER node
 
 # Запуск n8n с отладкой
-CMD ["/bin/sh", "-c", "cat /home/node/.n8n/config && n8n start"]
+CMD ["/bin/sh", "-c", "echo 'Config loaded:' && cat /home/node/.n8n/config && n8n start"]
