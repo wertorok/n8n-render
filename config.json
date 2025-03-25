@@ -1,0 +1,15 @@
+{
+    "security": {
+      "api": {
+        "enabled": true,
+        "key": "mysecretkey2025"
+      },
+      "basicAuth": {
+        "active": false
+      }
+    },
+    "host": "n8n-render-production-c2d4.up.railway.app",
+    "protocol": "https",
+    "webhookUrl": "https://n8n-render-production-c2d4.up.railway.app/",
+    "encryptionKey": "твой_ключ"
+  }
